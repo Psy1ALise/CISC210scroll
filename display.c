@@ -28,7 +28,10 @@ void displayLetter(char letter, int xOffset, int yOffset) {
 	}
 	sense_fb_bitmap_t *bm=fb->bitmap;
 	clearFrameBuffer(fb,BLACK);
-					
+
+	xOffset=(xOffset%8+8)%8;
+	yOffset=(yOffset%8+8)%8;
+
 	if(letter == 'Z'){
 
 		// Top of Z
@@ -72,6 +75,121 @@ void displayLetter(char letter, int xOffset, int yOffset) {
 		// Bottom of X
 		bm->pixel[(2+yOffset)%8][(5+xOffset)%8]=WHITE;
 		bm->pixel[(6+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(6+xOffset)%8]=WHITE;
+	}
+
+	else if(letter == 'A'){
+		
+		// Top of A
+		bm->pixel[(5+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(1+xOffset)%8]=WHITE;
+
+		// Middle of A
+		bm->pixel[(6+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(5+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(4+xOffset)%8]=WHITE;
+		// Bottom of A
+		bm->pixel[(6+yOffset)%8][(7+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(7+xOffset)%8]=WHITE;
+	}
+
+	else if(letter == 'W'){
+		
+		// Top of W
+		bm->pixel[(6+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(1+xOffset)%8]=WHITE;
+
+		// Middle of W
+		bm->pixel[(6+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(6+xOffset)%8]=WHITE;					
+		bm->pixel[(2+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(5+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(6+xOffset)%8]=WHITE;
+
+		// Bottome of W
+		bm->pixel[(6+yOffset)%8][(7+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(7+xOffset)%8]=WHITE;
+	}
+
+	else if(letter == 'J'){
+
+		//Top of J
+		bm->pixel[(2+yOffset)%8][(0+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(5+xOffset)%8]=WHITE;
+
+		//Middle of J
+		bm->pixel[(3+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(5+yOffset)%8][(6+xOffset)%8]=WHITE;
+
+		//Bottome of J
+		bm->pixel[(6+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(5+xOffset)%8]=WHITE;
+	}
+
+	else if(letter == 'Y'){
+		bm->pixel[(1+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(7+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(5+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(7+xOffset)%8]=WHITE;
+	}
+
+	else if(letter == 'N'){
+		bm->pixel[(1+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(1+yOffset)%8][(7+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(1+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(6+xOffset)%8]=WHITE;
+		bm->pixel[(6+yOffset)%8][(7+xOffset)%8]=WHITE;
+		bm->pixel[(5+yOffset)%8][(2+xOffset)%8]=WHITE;
+		bm->pixel[(5+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(3+xOffset)%8]=WHITE;
+		bm->pixel[(4+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(4+xOffset)%8]=WHITE;
+		bm->pixel[(3+yOffset)%8][(5+xOffset)%8]=WHITE;
+		bm->pixel[(2+yOffset)%8][(5+xOffset)%8]=WHITE;
 		bm->pixel[(2+yOffset)%8][(6+xOffset)%8]=WHITE;
 	}
 }

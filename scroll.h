@@ -9,3 +9,7 @@ void clearDisplay(void);
 void openJoystick(void);
 void closeJoystick(void);
 void checkJoystick(void (*callback)(unsigned int code), int delay);
+
+//main.c
+
+void handler(unsigned int code);
