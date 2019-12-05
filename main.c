@@ -29,7 +29,7 @@ void handler(unsigned int code) {
 
 int main(void){
 	float x=0,y=0;
-	char ini[] ="ZXAWJZYN";
+	char ini[] ="YN";
 	
 	openJoystick();
 	openDisplay();
